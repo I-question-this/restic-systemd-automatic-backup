@@ -22,7 +22,7 @@ RETENTION_MONTHS=18
 RETENTION_YEARS=3
 
 # What to backup, and what to not
-BACKUP_PATHS="/home/*/.quodlibet /home/*/.radare2rc /home/*/.ssh /home/*/Documents /home/*/Development /home/*/Drive /home/*/Games /home/*/Music /home/*/Pictures /home/*/Templates /home/*/Videos /home/*/VirutalBox /home/*/Zotero /home/git/repos"
+BACKUP_PATHS=$(cat /etc/restic/backup_include)
 
 BACKUP_EXCLUDES="--exclude-file /etc/restic/backup_exclude"
 for dir in /home/*
