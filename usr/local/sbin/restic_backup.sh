@@ -38,7 +38,7 @@ BACKUP_TAG=systemd.timer
 
 # Set all environment variables like
 # B2_ACCOUNT_ID, B2_ACCOUNT_KEY, RESTIC_REPOSITORY etc.
-source /etc/restic/restic_env.sh
+source /etc/restic/b2_env.sh
 
 # NOTE start all commands in background and wait for them to finish.
 # Reason: bash ignores any signals while child process is executing and thus my trap exit hook is not triggered.
