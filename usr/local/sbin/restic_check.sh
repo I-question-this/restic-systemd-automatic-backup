@@ -23,7 +23,10 @@ source /etc/restic/b2_env.sh
 #restic unlock &
 #wait $!
 
+B2_CONNECTIONS=50 # Default is 5
+
 # Check repository for errors.
 restic check \
+	--option b2.connections=$B2_CONNECTIONS \
 	--verbose &
 wait $!
