@@ -20,6 +20,7 @@ RETENTION_DAYS=14
 RETENTION_WEEKS=16
 RETENTION_MONTHS=18
 RETENTION_YEARS=3
+B2_CONNECTIONS=50 # Default is 5
 
 # What to backup, and what to not
 BACKUP_PATHS=$(cat /etc/restic/backup_include)
@@ -57,6 +58,7 @@ restic backup \
 	--verbose \
 	--one-file-system \
 	--tag $BACKUP_TAG \
+	--option b2.connections=$B2_CONNECTIONS \
 	$BACKUP_EXCLUDES \
 	$BACKUP_PATHS &
 wait $!
